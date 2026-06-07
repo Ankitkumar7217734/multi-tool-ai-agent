@@ -4,6 +4,11 @@ An autonomous AI agent built with LangChain that answers questions by deciding, 
 
 > **Resume summary:** Built a multi-tool LangChain agent (Groq LLM) that autonomously routes queries across Wikipedia, Arxiv, web search, and a FAISS-backed RAG tool, with tool-call validation retries, LaTeX rendering, and a Streamlit chat UI.
 
+## Links
+
+- **Live app:** https://multi-tool-ai-agent-lfkupjeaxwmywzkqsn87bo.streamlit.app/
+- **GitHub repo:** https://github.com/Ankitkumar7217734/multi-tool-ai-agent
+
 ## Demo
 
 _Add a screenshot or short GIF of the running app here._
@@ -113,7 +118,7 @@ LANGCHAIN_PROJECT="multi-tool-agent"
 streamlit run app.py
 ```
 
-Open http://localhost:8501, enter your Groq API key in the sidebar, and start chatting.
+Then enter your Groq API key in the sidebar and start chatting.
 
 **Notebook:**
 
