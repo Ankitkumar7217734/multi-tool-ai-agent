@@ -1,0 +1,10 @@
+[theme]
+base = "light"
+primaryColor = "#FF4B4B"
+
+[server]
+headless = true
+enableCORS = false
+
+[browser]
+gatherUsageStats = false

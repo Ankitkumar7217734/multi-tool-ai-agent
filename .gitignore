@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Backups / scratch
+*.bak
+*.bak[0-9]
+
+# Environments
+.venv/
+venv/
+env/
+
+# Secrets (NEVER commit real keys)
+.env
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
