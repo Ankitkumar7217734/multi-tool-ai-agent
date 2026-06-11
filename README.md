@@ -6,7 +6,7 @@ An autonomous AI agent built with LangChain that answers questions by deciding, 
 
 ## Links
 
-- **Live app:** https://multi-tool-ai-agent-lfkupjeaxwmywzkqsn87bo.streamlit.app/
+- **Live app:** https://multi-tool-ai-agent-ankit.streamlit.app/
 - **GitHub repo:** https://github.com/Ankitkumar7217734/multi-tool-ai-agent
 
 ## Demo
