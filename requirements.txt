@@ -12,6 +12,6 @@ chromadb==1.5.9
 wikipedia==1.4.0
 beautifulsoup4>=4.12
 arxiv==4.0.0
-duckduckgo-search>=5.0
+ddgs>=7.0
 python-dotenv==1.2.2
 yfinance>=0.2.40
