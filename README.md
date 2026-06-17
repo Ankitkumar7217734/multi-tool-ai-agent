@@ -142,3 +142,7 @@ README.md           This file
 - langchain-community is being sunset and emits deprecation warnings.
 - Wikipedia requires a User-Agent header, set automatically via `wikipedia.set_user_agent()`.
 # multi-tool-ai-agent
+cd "/Users/ankitkumar/Downloads/GenAI/Langchain/5-RAG: Implementation with Q&A Conversation with History."
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt

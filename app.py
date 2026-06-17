@@ -258,11 +258,21 @@ if prompt := st.chat_input(placeholder="Ask me anything..."):
         try:
             response = run_agent(prompt, api_key, [st_cb], streaming=True,
                                  chat_history=chat_history)
-        except groq.APIError:
-            # gpt-oss sometimes hallucinates a tool name while streaming, which
-            # Groq rejects. Retry once without streaming, which is more reliable.
-            response = run_agent(prompt, api_key, [st_cb], streaming=False,
-                                 chat_history=chat_history)
+        except groq.APIError as e:
+            # A 400 means Groq rejected the tool call (hallucinated tool name
+            # while streaming). Retry once with streaming disabled for a clean
+            # structured response. Other errors (401 auth, 429 rate-limit) are
+            # surfaced immediately without retrying.
+            if getattr(e, "status_code", None) == 400:
+                st.toast("Tool-call validation failed — retrying without streaming...", icon="⚠️")
+                try:
+                    response = run_agent(prompt, api_key, [st_cb], streaming=False,
+                                         chat_history=chat_history)
+                except groq.APIError as retry_err:
+                    response = (f"Sorry, the request failed even after retrying. "
+                                f"Error: {retry_err}")
+            else:
+                response = (f"API error ({getattr(e, 'status_code', 'unknown')}): {e}")
         response = render_latex(response)
         st.session_state.messages.append({"role": "assistant", "content": response})
         st.markdown(response)
